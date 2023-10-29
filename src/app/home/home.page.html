@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding">
+  <div style="max-height: 40px;">
+    <form [formGroup]="formLogin" style="padding-top: 40px;">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <img src="/assets/img/logo_incluirtec.png" width="200">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input label="Documento" label-placement="floating" formControlName="document" type="number" minlength="5"
+              maxlength="10"></ion-input>
+          </ion-item>
+          <span class="errorform" *ngIf="formLogin.get('document').hasError('required') && formLogin.get('document').touched">Este campo debe ser obligatorio</span>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input label="Correo Electrónico" label-placement="floating" formControlName="email"
+            type="text"></ion-input>
+          </ion-item>
+          <span class="errorform" *ngIf="formLogin.get('email').hasError('required') && formLogin.get('email').touched">Este campo debe ser obligatorio</span>
+          <span class="errorform" *ngIf="formLogin.get('email').hasError('email') && formLogin.get('email').touched">El correo ingresado no es valido</span>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input label="Contraseña" label-placement="floating" formControlName="password"
+            type="password" onclick="this.focus();"></ion-input>
+          </ion-item>
+        </ion-col>
+        <span class="errorform" *ngIf="formLogin.get('password').hasError('required') && formLogin.get('password').touched">Este campo debe ser obligatorio</span>
+        <ion-col size="12" style="padding-top: 20px;">
+              <ion-button expand="block" shape="round" color="secondary" (click)="login()"
+                [disabled]="!formLogin.valid">INGRESAR</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
   </div>
 </ion-content>

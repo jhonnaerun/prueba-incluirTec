@@ -1,0 +1,32 @@
+[
+    {
+      "icon": "home-outline",
+      "name": "Inicio",
+      "redirectTo": "/inicio"
+    },
+    {
+      "icon": "alert-circle-outline",
+      "name": "Crear Solicitud",
+      "redirectTo": "/inicio/crear-solicitud"
+    },
+    {
+      "icon": "hammer-outline",
+      "name": "Editar Solicitud",
+      "redirectTo": "/inicio/actualizar-solicitud"
+    },
+    {
+      "icon": "search-outline",
+      "name": "Buscar solicitud",
+      "redirectTo": "/inicio/buscar-solicitud"
+    },
+    {
+      "icon": "refresh-circle-outline",
+      "name": "Sincronizar solicitud",
+      "redirectTo": "/inicio/sincronizar-solicitud"
+    },
+    {
+      "icon": "close-outline",
+      "name": "Salir",
+      "redirectTo": "/home"
+    }
+]
